@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 
 import useStyles from "./styles";
+import Form from "./Form/Form";
 
 const Main = () => {
   const classes = useStyles();
@@ -25,11 +26,14 @@ const Main = () => {
           variant="subtitle1"
           style={{ lineHeight: "1.5em", marginTop: "20px" }}
         >
-          {/* Info Card Component */}
-          Try Saying : Add Income for $100 in Category Salary for Monday...
+          {/* Infor Card... Things to say to speechly */}
+          Try Saying: Add Income for $100 in Category Salary for Monday
         </Typography>
-        <Divider /> {/* This is a horizontal rule that divides content  */}
-        {/* Form */}
+
+        {/* Horizontal Rule to subdivide the cards */}
+        <Divider />
+
+        <Form />
       </CardContent>
 
       <CardContent className={classes.cardContent}>
