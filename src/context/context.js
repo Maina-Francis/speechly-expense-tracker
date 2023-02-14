@@ -17,13 +17,14 @@ export const Provider = ({ children }) => {
     dispatch({ type: "ADD_TRANSACTION", payload: transaction });
   };
 
-  console.log(transactions);
+  // console.log(transactions);
   return (
     <ExpenseTrackerContext.Provider
       value={{
         // send the deleteTransaction and addTransaction to our entire state
         deleteTransactions,
         addTransaction,
+        transactions,
       }}
     >
       {children}
