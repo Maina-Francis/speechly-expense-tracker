@@ -24,6 +24,20 @@ const List = () => {
       amount: 50,
       date: "Wednesday 14 Feb",
     },
+    {
+      id: 2,
+      type: "Expense",
+      category: "Vehicle",
+      amount: 250,
+      date: "Wednesday 7 Feb",
+    },
+    {
+      id: 3,
+      type: "Income",
+      category: "Business",
+      amount: 500,
+      date: "Wednesday 21 Feb",
+    },
   ];
 
   return (
