@@ -16,7 +16,7 @@ const contextReducer = (state, action) => {
       return transactions;
 
     default:
-      break;
+      return state;
   }
 };
 

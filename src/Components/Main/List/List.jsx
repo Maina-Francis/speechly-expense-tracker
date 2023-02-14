@@ -22,21 +22,21 @@ const List = () => {
       type: "Income",
       category: "Salary",
       amount: 50,
-      date: "Wednesday 14 Feb",
+      date: "Wed 14 Feb",
     },
     {
       id: 2,
       type: "Expense",
       category: "Vehicle",
       amount: 250,
-      date: "Wednesday 7 Feb",
+      date: "Wed 7 Feb",
     },
     {
       id: 3,
       type: "Income",
-      category: "Business",
+      category: "Salary",
       amount: 500,
-      date: "Wednesday 21 Feb",
+      date: "Wed 21 Feb",
     },
   ];
 
@@ -64,7 +64,7 @@ const List = () => {
             </ListItemAvatar>
             <ListItemText
               primary={transaction.category}
-              secondary={`${transaction.amount} - ${transaction.date}`}
+              secondary={`$${transaction.amount} - ${transaction.date}`}
             />
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="delete" onClick="">
