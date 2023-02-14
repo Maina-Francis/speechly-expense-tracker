@@ -9,7 +9,7 @@ export const Provider = ({ children }) => {
   const [transactions, dispatch] = useReducer(contextReducer, initialState);
 
   //   Action Creators
-  const deleteTransactions = (id) => {
+  const deleteTransaction = (id) => {
     dispatch({ type: "DELETE_TRANSACTION", payload: id });
   };
 
@@ -22,7 +22,7 @@ export const Provider = ({ children }) => {
     <ExpenseTrackerContext.Provider
       value={{
         // send the deleteTransaction and addTransaction to our entire state
-        deleteTransactions,
+        deleteTransaction,
         addTransaction,
         transactions,
       }}
