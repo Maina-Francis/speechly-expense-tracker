@@ -9,6 +9,14 @@ export const Provider = ({ children }) => {
   const [transactions, dispatch] = useReducer(contextReducer, initialState);
 
   //   Action Creators
+  const balance = transactions.reduce(
+    (accumulator, currValue) =>
+      currValue.type === "Expense"
+        ? accumulator - currValue.amount
+        : accumulator + currValue.amount,
+    0
+  );
+
   const deleteTransaction = (id) => {
     dispatch({ type: "DELETE_TRANSACTION", payload: id });
   };

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ExpenseTrackerContext } from "../../context/context";
 import {
   Card,
   CardHeader,
@@ -14,6 +15,7 @@ import List from "./List/List";
 
 const Main = () => {
   const classes = useStyles();
+  const { balance } = useContext(ExpenseTrackerContext);
 
   return (
     <Card className={classes.root}>
@@ -21,7 +23,7 @@ const Main = () => {
 
       <CardContent>
         <Typography align="center" variant="h5">
-          Total Balance $500
+          Total Balance: ${balance}
         </Typography>
         <Typography
           variant="subtitle1"
