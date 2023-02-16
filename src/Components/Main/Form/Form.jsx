@@ -23,6 +23,7 @@ import useStyles from "./styles";
 import {
   incomeCategories,
   expenseCategories,
+  resetCategories,
 } from "../../../constants/categories";
 
 const initialState = {
@@ -39,6 +40,9 @@ const Form = () => {
 
   // console.log(formData);
 
+  const selectedCategories =
+    formData.type === "Income" ? incomeCategories : expenseCategories;
+
   // Create transaction function
   const createTransaction = () => {
     const transaction = {
@@ -49,11 +53,9 @@ const Form = () => {
 
     addTransaction(transaction);
     // reset all state fields so that users can create a new transaction
+    resetCategories();
     setFormData(initialState);
   };
-
-  const selectedCategories =
-    formData.type === "Income" ? incomeCategories : expenseCategories;
 
   return (
     <Grid container spacing={2}>
@@ -88,7 +90,7 @@ const Form = () => {
             }
           >
             {selectedCategories.map((c) => (
-              <MenuItem key={c.type} value={c.type}>
+              <MenuItem key={c.name} value={c.name}>
                 {c.type}
               </MenuItem>
             ))}
