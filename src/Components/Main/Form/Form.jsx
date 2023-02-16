@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 
 import { ExpenseTrackerContext } from "../../../context/context";
+import { useSpeechContext } from "@speechly/react-client";
 
 // to generate unique id
 import { v4 as uuidv4 } from "uuid";
@@ -37,9 +38,8 @@ const Form = () => {
   const classes = useStyles();
   const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(ExpenseTrackerContext);
-
+  const { segment } = useSpeechContext();
   // console.log(formData);
-
   const selectedCategories =
     formData.type === "Income" ? incomeCategories : expenseCategories;
 
@@ -62,7 +62,7 @@ const Form = () => {
       <Grid item xs={12}>
         <Typography align="center" variant="subtitle2" gutterBottom>
           {/* WOrds that we speak as we interact with speechly */}
-          ...
+          {segment && segment.words.map((word) => word.value).join(" ")}
         </Typography>
       </Grid>
 
