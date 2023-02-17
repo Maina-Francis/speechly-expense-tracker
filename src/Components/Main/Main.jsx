@@ -18,7 +18,7 @@ const Main = () => {
   const { balance } = useContext(ExpenseTrackerContext);
 
   return (
-    <Card className={classes.root}>
+    <Card>
       <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
 
       <CardContent>
